@@ -51,6 +51,19 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
+/* ---- Thin line icons ---- */
+.ic {
+  width: 1.35em; height: 1.35em; fill: none; stroke: currentColor;
+  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -0.28em; flex: none;
+}
+.card-icon .ic { width: 26px; height: 26px; stroke: var(--accent); }
+.trust-ic .ic { width: 27px; height: 27px; stroke: var(--sage-deep); }
+.contact-ic .ic { width: 28px; height: 28px; stroke: var(--sage-deep); }
+.reserve-points .ic { width: 20px; height: 20px; stroke: rgba(255,255,255,.85); }
+.btn .ic { width: 18px; height: 18px; stroke-width: 1.6; }
+.fab .ic { width: 17px; height: 17px; }
+
 .container { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
 
 .skip-link {
@@ -316,7 +329,7 @@ blockquote {
 .reserve h2 { color: #fff; }
 .reserve-copy p { color: rgba(255,255,255,.9); margin: .6rem 0 1.2rem; font-size: 1.1rem; }
 .reserve-points { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
-.reserve-points li { font-weight: 600; }
+.reserve-points li { font-weight: 500; display: flex; align-items: center; gap: .6rem; }
 .reserve-actions { display: flex; flex-direction: column; gap: .9rem; align-items: stretch; text-align: center; }
 .reserve-actions .btn { width: 100%; }
 .reserve-actions .btn-primary { background: var(--terracotta); color: #fff; box-shadow: 0 12px 26px rgba(0,0,0,.22); }
@@ -350,6 +363,7 @@ a.contact-item:hover { transform: translateY(-4px); }
 /* ---- Floating action button (mobile) ---- */
 .fab {
   position: fixed; bottom: 18px; right: 18px; z-index: 40; display: none;
+  align-items: center; gap: .5rem;
   background: var(--terracotta); color: #fff; text-decoration: none; font-weight: 600;
   padding: .8rem 1.2rem; border-radius: 999px; box-shadow: 0 10px 24px rgba(198,123,92,.42);
   font-size: .95rem;
@@ -394,7 +408,7 @@ a.contact-item:hover { transform: translateY(-4px); }
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-  .fab { display: inline-block; }
+  .fab { display: inline-flex; }
 }
 @media (max-width: 700px) {
   .trust-inner { grid-template-columns: 1fr; gap: .5rem; padding: 1.3rem 0; }

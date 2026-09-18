@@ -42,6 +42,67 @@
   </script>
 </head>
 <body>
+  <!-- ============ ICON SPRITE (thin line set) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="ic-lotus" viewBox="0 0 24 24">
+        <circle cx="12" cy="6.4" r="2.4"/>
+        <path d="M12 9.6c-3.4 0-6.1 2.4-6.7 5.7-.14.8.5 1.5 1.3 1.5h10.8c.8 0 1.44-.7 1.3-1.5C18.1 12 15.4 9.6 12 9.6z"/>
+      </symbol>
+      <symbol id="ic-spark" viewBox="0 0 24 24">
+        <path d="M11 4c.5 3 1.5 4 4.5 4.5-3 .5-4 1.5-4.5 4.5-.5-3-1.5-4-4.5-4.5 3-.5 4-1.5 4.5-4.5z"/>
+        <path d="M18 13.5c.22 1.4.8 2 2.2 2.2-1.4.22-2 .8-2.2 2.2-.22-1.4-.8-2-2.2-2.2 1.4-.22 2-.8 2.2-2.2z"/>
+      </symbol>
+      <symbol id="ic-drop" viewBox="0 0 24 24">
+        <path d="M12 3.2c-3.1 4-5.2 6.7-5.2 9.7a5.2 5.2 0 0 0 10.4 0c0-3-2.1-5.7-5.2-9.7z"/>
+        <path d="M9.4 13.4a2.6 2.6 0 0 0 2.2 2.4"/>
+      </symbol>
+      <symbol id="ic-leaf" viewBox="0 0 24 24">
+        <path d="M5 19c-.5-8 5.5-14.5 14-14 .5 8.5-6 14.5-14 14z"/>
+        <path d="M6 18c4-4.5 7.5-7.5 11-9.5"/>
+      </symbol>
+      <symbol id="ic-sprout" viewBox="0 0 24 24">
+        <path d="M12 20.5V12"/>
+        <path d="M12 13.5c-3.2 0-5.3-2.1-5.3-5.3 3.2 0 5.3 2.1 5.3 5.3z"/>
+        <path d="M12 11.5c0-3.2 2.1-5.3 5.3-5.3 0 3.2-2.1 5.3-5.3 5.3z"/>
+        <path d="M8.5 20.5h7"/>
+      </symbol>
+      <symbol id="ic-flower" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="1.9"/>
+        <path d="M12 10.1c-1.5-1.5-1.5-4 0-5.6 1.5 1.6 1.5 4.1 0 5.6z"/>
+        <path d="M13.9 12c1.5-1.5 4-1.5 5.6 0-1.6 1.5-4.1 1.5-5.6 0z"/>
+        <path d="M12 13.9c1.5 1.5 1.5 4 0 5.6-1.5-1.6-1.5-4.1 0-5.6z"/>
+        <path d="M10.1 12c-1.5 1.5-4 1.5-5.6 0 1.6-1.5 4.1-1.5 5.6 0z"/>
+      </symbol>
+      <symbol id="ic-heart" viewBox="0 0 24 24">
+        <path d="M12 20s-6.5-4.3-8.6-8.4C1.9 8.3 3.5 5.4 6.6 5.4c1.9 0 3 1 5.4 3.4 2.4-2.4 3.5-3.4 5.4-3.4 3.1 0 4.7 2.9 3.2 6.2C18.5 15.7 12 20 12 20z"/>
+      </symbol>
+      <symbol id="ic-calendar" viewBox="0 0 24 24">
+        <rect x="4" y="5.2" width="16" height="15" rx="2.2"/>
+        <path d="M4 9.5h16M8 3.2v4M16 3.2v4"/>
+      </symbol>
+      <symbol id="ic-lock" viewBox="0 0 24 24">
+        <rect x="5" y="11" width="14" height="9.4" rx="2.2"/>
+        <path d="M8 11V8a4 4 0 0 1 8 0v3"/>
+      </symbol>
+      <symbol id="ic-bell" viewBox="0 0 24 24">
+        <path d="M6 17h12l-1.6-2.4v-3a4.4 4.4 0 0 0-8.8 0v3L6 17z"/>
+        <path d="M10.3 20a1.9 1.9 0 0 0 3.4 0"/>
+      </symbol>
+      <symbol id="ic-phone" viewBox="0 0 24 24">
+        <path d="M6 3.6h3.1l1.9 4.8-2.4 1.5a11.5 11.5 0 0 0 5 5l1.5-2.4 4.8 1.9V19a2 2 0 0 1-2.1 2A16.5 16.5 0 0 1 4 5.7 2 2 0 0 1 6 3.6z"/>
+      </symbol>
+      <symbol id="ic-pin" viewBox="0 0 24 24">
+        <path d="M12 21s6.8-6.3 6.8-11A6.8 6.8 0 0 0 5.2 10c0 4.7 6.8 11 6.8 11z"/>
+        <circle cx="12" cy="10" r="2.5"/>
+      </symbol>
+      <symbol id="ic-globe" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8.6"/>
+        <path d="M3.5 12h17M12 3.4c2.6 2.6 2.6 14.6 0 17.2M12 3.4c-2.6 2.6-2.6 14.6 0 17.2"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- ============ OPENING RITUAL — « Le Souffle » ============ -->
   <div id="souffle-intro" class="intro" aria-hidden="true">
     <div class="intro-inner">
@@ -174,15 +235,15 @@
     <section class="trust" id="trust" aria-label="Engagements">
       <div class="container trust-inner">
         <div class="trust-item">
-          <span class="trust-ic" aria-hidden="true">🌸</span>
+          <span class="trust-ic" aria-hidden="true"><svg class="ic"><use href="#ic-flower"/></svg></span>
           <p><strong>Bien-être global</strong><br />et personnalisé</p>
         </div>
         <div class="trust-item">
-          <span class="trust-ic" aria-hidden="true">💗</span>
+          <span class="trust-ic" aria-hidden="true"><svg class="ic"><use href="#ic-heart"/></svg></span>
           <p><strong>Écoute &amp; bienveillance</strong><br />et professionnalisme</p>
         </div>
         <div class="trust-item">
-          <span class="trust-ic" aria-hidden="true">🍃</span>
+          <span class="trust-ic" aria-hidden="true"><svg class="ic"><use href="#ic-leaf"/></svg></span>
           <p><strong>Un accompagnement</strong><br />adapté à vos besoins</p>
         </div>
       </div>
@@ -202,7 +263,7 @@
 
         <div class="cards">
           <article class="card" style="--accent:#6f8f7d">
-            <div class="card-icon" aria-hidden="true">🧘</div>
+            <div class="card-icon" aria-hidden="true"><svg class="ic"><use href="#ic-lotus"/></svg></div>
             <h3>Sophrologie</h3>
             <ul>
               <li>Gestion du stress &amp; des émotions</li>
@@ -213,7 +274,7 @@
           </article>
 
           <article class="card" style="--accent:#c67b5c">
-            <div class="card-icon" aria-hidden="true">✨</div>
+            <div class="card-icon" aria-hidden="true"><svg class="ic"><use href="#ic-spark"/></svg></div>
             <h3>Énergéticienne</h3>
             <ul>
               <li>Harmonisation des énergies</li>
@@ -224,7 +285,7 @@
           </article>
 
           <article class="card" style="--accent:#5f8a94">
-            <div class="card-icon" aria-hidden="true">💧</div>
+            <div class="card-icon" aria-hidden="true"><svg class="ic"><use href="#ic-drop"/></svg></div>
             <h3>Drainage &amp; modelage lymphatique</h3>
             <ul>
               <li>Favorise la circulation lymphatique</li>
@@ -235,7 +296,7 @@
           </article>
 
           <article class="card" style="--accent:#9a8a5e">
-            <div class="card-icon" aria-hidden="true">🌿</div>
+            <div class="card-icon" aria-hidden="true"><svg class="ic"><use href="#ic-leaf"/></svg></div>
             <h3>Massage modelant minceur</h3>
             <ul>
               <li>Affine la silhouette, draine, raffermit</li>
@@ -245,7 +306,7 @@
           </article>
 
           <article class="card" style="--accent:#d0a05a">
-            <div class="card-icon" aria-hidden="true">🧸</div>
+            <div class="card-icon" aria-hidden="true"><svg class="ic"><use href="#ic-sprout"/></svg></div>
             <h3>Yoga enfants</h3>
             <ul>
               <li>Séances ludiques et adaptées</li>
@@ -267,7 +328,7 @@
     <section class="section section-alt" id="apropos">
       <div class="container about">
         <div class="about-media">
-          <img src="assets/img/stephanie.jpg" alt="Stéphanie, sophrologue et énergéticienne" width="600" height="600" />
+          <img src="assets/img/stephanie.jpg" alt="Stéphanie, sophrologue et énergéticienne" width="500" height="500" />
         </div>
         <div class="about-copy">
           <p class="eyebrow">À propos</p>
@@ -302,10 +363,10 @@
           </p>
         </div>
         <div class="gallery">
-          <figure><img src="assets/img/cabinet-2.jpg" alt="Table de soin du cabinet" loading="lazy" width="1416" height="2048" /></figure>
-          <figure><img src="assets/img/cabinet-3.jpg" alt="Espace de soin lumineux" loading="lazy" width="1416" height="2048" /></figure>
-          <figure><img src="assets/img/cabinet-4.jpg" alt="Coin détente du cabinet" loading="lazy" width="1416" height="2048" /></figure>
-          <figure><img src="assets/img/cabinet-5.jpg" alt="Vue d'ensemble du cabinet de bien-être" loading="lazy" width="1500" height="2000" /></figure>
+          <figure><img src="assets/img/cabinet-2.jpg" alt="Table de soin du cabinet" loading="lazy" width="1400" height="1892" /></figure>
+          <figure><img src="assets/img/cabinet-3.jpg" alt="Espace de soin lumineux" loading="lazy" width="1400" height="1892" /></figure>
+          <figure><img src="assets/img/cabinet-4.jpg" alt="Coin détente du cabinet" loading="lazy" width="1400" height="1892" /></figure>
+          <figure><img src="assets/img/cabinet-5.jpg" alt="Vue d'ensemble du cabinet de bien-être" loading="lazy" width="1400" height="1745" /></figure>
         </div>
       </div>
     </section>
@@ -318,9 +379,9 @@
           <h2>Prenez rendez-vous facilement</h2>
           <p>Réservation en ligne 24&nbsp;/&nbsp;7, paiement sécurisé et rappel de rendez-vous automatique.</p>
           <ul class="reserve-points">
-            <li>🗓️ Réservation en ligne 24/7</li>
-            <li>🔒 Paiement sécurisé</li>
-            <li>🔔 Rappel de rendez-vous automatique</li>
+            <li><svg class="ic"><use href="#ic-calendar"/></svg> Réservation en ligne 24/7</li>
+            <li><svg class="ic"><use href="#ic-lock"/></svg> Paiement sécurisé</li>
+            <li><svg class="ic"><use href="#ic-bell"/></svg> Rappel de rendez-vous automatique</li>
           </ul>
         </div>
         <div class="reserve-actions">
@@ -329,7 +390,7 @@
             Réserver sur Planity
           </a>
           <a href="tel:+33629846045" class="btn btn-ghost btn-lg btn-ghost-light">
-            📞 06 29 84 60 45
+            <svg class="ic"><use href="#ic-phone"/></svg> 06 29 84 60 45
           </a>
           <p class="reserve-note">Réservez en un clic — votre bien-être commence aujourd'hui ♥</p>
         </div>
@@ -345,17 +406,17 @@
         </div>
         <div class="contact-grid">
           <a class="contact-item" href="tel:+33629846045">
-            <span class="contact-ic" aria-hidden="true">📞</span>
+            <span class="contact-ic" aria-hidden="true"><svg class="ic"><use href="#ic-phone"/></svg></span>
             <span class="contact-label">Téléphone</span>
             <span class="contact-val">06 29 84 60 45</span>
           </a>
           <div class="contact-item">
-            <span class="contact-ic" aria-hidden="true">📍</span>
+            <span class="contact-ic" aria-hidden="true"><svg class="ic"><use href="#ic-pin"/></svg></span>
             <span class="contact-label">Localisation</span>
             <span class="contact-val">Saint-Raphaël 83700<br /><small>Déplacements possibles</small></span>
           </div>
           <a class="contact-item" href="https://www.planity.com/" target="_blank" rel="noopener">
-            <span class="contact-ic" aria-hidden="true">🌐</span>
+            <span class="contact-ic" aria-hidden="true"><svg class="ic"><use href="#ic-globe"/></svg></span>
             <span class="contact-label">Réservation</span>
             <span class="contact-val">Planity.com</span>
           </a>
@@ -383,7 +444,7 @@
     </div>
   </footer>
 
-  <a href="#reserver" class="fab" aria-label="Prendre rendez-vous">📅 Réserver</a>
+  <a href="#reserver" class="fab" aria-label="Prendre rendez-vous"><svg class="ic"><use href="#ic-calendar"/></svg> Réserver</a>
 
   <script src="script.js"></script>
 </body>
