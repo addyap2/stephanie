@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SR Bien-être — Sophrologie, Énergétique & Massage à Saint-Raphaël</title>
   <meta name="description" content="SR Bien-être à Saint-Raphaël (83700) : sophrologie, soins énergétiques (Reiki), drainage lymphatique, massage modelant minceur et yoga enfants. Prenez soin de vous, naturellement. Réservation en ligne." />
-  <meta name="theme-color" content="#8a76c0" />
+  <meta name="theme-color" content="#f4efe9" />
   <link rel="canonical" href="https://sr-bien-etre.fr/" />
 
   <!-- Open Graph -->
@@ -18,7 +18,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@300;400;500;600;700&family=Petit+Formal+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
   <script type="application/ld+json">
@@ -42,7 +42,18 @@
   </script>
 </head>
 <body>
+  <!-- ============ OPENING RITUAL — « Le Souffle » ============ -->
+  <div id="souffle-intro" class="intro" aria-hidden="true">
+    <div class="intro-inner">
+      <span class="intro-line" aria-hidden="true"></span>
+      <p class="intro-word intro-word--a">Respirez.</p>
+      <p class="intro-word intro-word--b">Retrouvez votre équilibre,<br /><i>naturellement.</i></p>
+    </div>
+    <button type="button" class="intro-skip" aria-label="Entrer sur le site">Entrer</button>
+  </div>
+
   <a class="skip-link" href="#main">Aller au contenu</a>
+  <span class="breath-line" aria-hidden="true"></span>
 
   <!-- ============ HEADER ============ -->
   <header class="site-header" id="top">
@@ -85,16 +96,60 @@
   </header>
 
   <main id="main">
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO — « Le Souffle » ============ -->
     <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <!-- La Membrane : souffle de lumière (pré-rendu léger, SVG/CSS, sans WebGL) -->
+      <div class="membrane" aria-hidden="true">
+        <svg class="membrane-svg" viewBox="0 0 900 900" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#c7d0c0" stop-opacity="0.9" />
+              <stop offset="45%" stop-color="#aebaa6" stop-opacity="0.55" />
+              <stop offset="100%" stop-color="#aebaa6" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="core" cx="46%" cy="44%" r="46%">
+              <stop offset="0%" stop-color="#fdf6ec" stop-opacity="0.98" />
+              <stop offset="38%" stop-color="#f2d8bf" stop-opacity="0.9" />
+              <stop offset="72%" stop-color="#d99f7d" stop-opacity="0.55" />
+              <stop offset="100%" stop-color="#c67b5c" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="prism" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#e79ab5" />
+              <stop offset="30%" stop-color="#b79ad6" />
+              <stop offset="60%" stop-color="#7fb9d8" />
+              <stop offset="100%" stop-color="#9ecf9f" />
+            </linearGradient>
+            <filter id="warp" x="-30%" y="-30%" width="160%" height="160%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.011 0.014" numOctaves="2" seed="7" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="42" xChannelSelector="R" yChannelSelector="G" />
+              <feGaussianBlur stdDeviation="6" />
+            </filter>
+            <filter id="soft"><feGaussianBlur stdDeviation="26" /></filter>
+            <filter id="grain">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
+              <feColorMatrix type="saturate" values="0" />
+            </filter>
+          </defs>
+
+          <ellipse cx="450" cy="450" rx="360" ry="360" fill="url(#halo)" filter="url(#soft)" />
+          <g filter="url(#warp)">
+            <ellipse cx="450" cy="440" rx="250" ry="262" fill="url(#core)" />
+            <ellipse class="prism-rim" cx="450" cy="440" rx="250" ry="262" fill="none"
+                     stroke="url(#prism)" stroke-width="3" opacity="0.35" />
+          </g>
+          <rect width="900" height="900" filter="url(#grain)" opacity="0.05" />
+        </svg>
+      </div>
+
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow">Sophrologue &amp; Énergéticienne · Saint-Raphaël</p>
-          <h1>Retrouvez votre équilibre,<br /><span class="grad-text">en douceur.</span></h1>
+          <p class="eyebrow">Sophrologue &amp; énergéticienne — Saint-Raphaël</p>
+          <h1 class="hero-title">
+            Retrouvez votre<br />équilibre, <span class="accent-word">naturellement.</span>
+          </h1>
           <p class="lead">
-            Sophrologie, soins énergétiques, drainage lymphatique, massage modelant et yoga
-            enfants. Un accompagnement personnalisé pour prendre soin de vous, naturellement.
+            Sophrologie, soins énergétiques, drainage lymphatique, massage modelant et
+            yoga enfants. Un accompagnement à l'écoute, pour prendre soin de vous — en douceur.
           </p>
           <div class="hero-actions">
             <a href="#reserver" class="btn btn-primary">Prendre rendez-vous</a>
@@ -104,18 +159,19 @@
             <li>Écoute</li><li>Douceur</li><li>Bienveillance</li><li>Résultats</li>
           </ul>
         </div>
-        <div class="hero-media">
-          <img src="assets/img/cabinet-1.jpg" alt="Le cabinet de bien-être de SR Bien-être à Saint-Raphaël" width="1416" height="2048" fetchpriority="high" />
-          <div class="hero-badge">
-            <strong>Déplacements<br />possibles</strong>
-            <span>Saint-Raphaël &amp; alentours</span>
-          </div>
-        </div>
+        <p class="hero-place" aria-hidden="true">
+          <span>déplacements possibles</span>
+          Saint-Raphaël<br />&amp; alentours
+        </p>
       </div>
+      <a href="#trust" class="hero-scroll" aria-label="Défiler">
+        <span class="hero-scroll-word">Respirez</span>
+        <span class="hero-scroll-dot"></span>
+      </a>
     </section>
 
     <!-- ============ TRUST STRIP ============ -->
-    <section class="trust" aria-label="Engagements">
+    <section class="trust" id="trust" aria-label="Engagements">
       <div class="container trust-inner">
         <div class="trust-item">
           <span class="trust-ic" aria-hidden="true">🌸</span>
