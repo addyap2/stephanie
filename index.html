@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@300;400;500;600;700&family=Petit+Formal+Script&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 
   <script type="application/ld+json">
   {
@@ -29,6 +29,8 @@
     "description": "Sophrologie, soins énergétiques (Reiki), drainage lymphatique, massage modelant minceur et yoga enfants à Saint-Raphaël.",
     "image": "https://sr-bien-etre.fr/assets/img/cabinet-1.jpg",
     "telephone": "+33629846045",
+    "email": "stephaniesophro34@gmail.com",
+    "founder": { "@type": "Person", "name": "Stéphanie Rouchy" },
     "areaServed": "Saint-Raphaël et alentours",
     "address": {
       "@type": "PostalAddress",
@@ -105,6 +107,10 @@
         <circle cx="12" cy="12" r="8.6"/>
         <path d="M3.5 12h17M12 3.4c2.6 2.6 2.6 14.6 0 17.2M12 3.4c-2.6 2.6-2.6 14.6 0 17.2"/>
       </symbol>
+      <symbol id="ic-mail" viewBox="0 0 24 24">
+        <rect x="3.5" y="5.5" width="17" height="13" rx="2.2"/>
+        <path d="M4 7l8 6 8-6"/>
+      </symbol>
     </defs>
   </svg>
 
@@ -126,19 +132,7 @@
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="SR Bien-être — accueil">
         <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 40 40" width="40" height="40">
-            <defs>
-              <linearGradient id="brandGrad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#e78ab0" />
-                <stop offset="35%" stop-color="#9a7cc4" />
-                <stop offset="70%" stop-color="#4aa9d8" />
-                <stop offset="100%" stop-color="#7fc48a" />
-              </linearGradient>
-            </defs>
-            <path d="M27 9c-5-3-13-2-13 4 0 5 12 4 12 10 0 6-9 7-14 4"
-              fill="none" stroke="url(#brandGrad)" stroke-width="4" stroke-linecap="round" />
-            <ellipse cx="20" cy="31" rx="9" ry="2.6" fill="url(#brandGrad)" opacity="0.55" />
-          </svg>
+          <img src="assets/img/logo.png" alt="" width="49" height="40" />
         </span>
         <span class="brand-text">
           <span class="brand-name">SR <em>Bien-être</em></span>
@@ -298,6 +292,10 @@
               <li>Jambes légères, ventre plat, peau tonique</li>
               <li>Pré &amp; post-opératoire (Lipo, BBL, etc.)</li>
             </ul>
+            <p class="card-price">
+              Membres inférieurs · 1 h — <strong>60 €</strong><br />
+              Supérieurs &amp; cou · 1 h à 1 h 15 — <strong>70 €</strong>
+            </p>
           </article>
 
           <article class="card" style="--accent:#9a8a5e">
@@ -339,14 +337,19 @@
           <p class="eyebrow">À propos</p>
           <h2>Votre bien-être est ma priorité</h2>
           <p>
-            Je suis Stéphanie, sophrologue et énergéticienne à Saint-Raphaël. J'accompagne
-            adultes, adolescents et enfants vers plus de sérénité, de confiance et d'équilibre,
-            avec une approche douce et à l'écoute.
+            Je suis Stéphanie Rouchy, sophrologue et énergéticienne à Saint-Raphaël.
+            J'accompagne adultes, adolescents et enfants vers plus de sérénité, de confiance
+            et d'équilibre, avec une approche douce et à l'écoute.
           </p>
           <p>
             De la sophrologie aux soins énergétiques, du drainage lymphatique au massage
             modelant, chaque séance est pensée pour vous — dans le respect de votre rythme et
             de vos besoins.
+          </p>
+          <p class="credentials">
+            <svg class="ic" aria-hidden="true"><use href="#ic-spark"/></svg>
+            Certifiée en <strong>drainage lymphatique</strong> et <strong>massage modelant</strong> —
+            International Beauty Academy (2026).
           </p>
           <blockquote>« Prenez soin de vous, naturellement. »</blockquote>
           <div class="about-values">
@@ -422,6 +425,11 @@
             <span class="contact-label">Localisation</span>
             <span class="contact-val">Saint-Raphaël 83700<br /><small>Déplacements possibles</small></span>
           </div>
+          <a class="contact-item" href="mailto:stephaniesophro34@gmail.com">
+            <span class="contact-ic" aria-hidden="true"><svg class="ic"><use href="#ic-mail"/></svg></span>
+            <span class="contact-label">Email</span>
+            <span class="contact-val contact-email">stephaniesophro34@gmail.com</span>
+          </a>
           <a class="contact-item" href="https://www.planity.com/aline-nails-83700-saint-raphael-g7h" target="_blank" rel="noopener">
             <span class="contact-ic" aria-hidden="true"><svg class="ic"><use href="#ic-globe"/></svg></span>
             <span class="contact-label">Réservation</span>
@@ -436,6 +444,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
+        <img class="footer-logo" src="assets/img/logo.png" alt="Logo SR Bien-être" width="73" height="60" loading="lazy" />
         <span class="brand-name">SR <em>Bien-être</em></span>
         <p>Équilibre · Énergie · Harmonie</p>
       </div>
@@ -446,7 +455,8 @@
         <a href="#reserver">Réserver</a>
       </nav>
       <p class="footer-legal">
-        © <span id="year"></span> SR Bien-être · Saint-Raphaël · 06 29 84 60 45
+        © <span id="year"></span> SR Bien-être — Rouchy Stéphanie · Saint-Raphaël 83700 · 06 29 84 60 45<br />
+        SIRET 509 418 265 00021
       </p>
     </div>
   </footer>

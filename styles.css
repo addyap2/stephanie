@@ -112,6 +112,7 @@ h3 { font-size: 1.45rem; font-weight: 500; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
 .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
 .brand-mark { display: grid; place-items: center; }
+.brand-mark img { height: 42px; width: auto; display: block; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
 .brand-name { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 600; letter-spacing: .01em; }
 .brand-name em { font-family: var(--ff-script); font-style: normal; color: var(--purple-deep); font-size: 1.35rem; }
@@ -297,6 +298,11 @@ body.intro-lock { overflow: hidden; }
   background: linear-gradient(160deg, #fff, #f6f1fa);
 }
 .card-cta p { margin: 0; color: var(--ink-soft); }
+.card-price {
+  margin: 1rem 0 0; padding-top: .9rem; border-top: 1px solid var(--line);
+  font-size: .86rem; color: var(--ink-soft); line-height: 1.7;
+}
+.card-price strong { color: var(--accent); font-family: var(--ff-head); font-size: 1.05rem; font-weight: 600; }
 
 /* ---- À propos ---- */
 .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
@@ -306,6 +312,13 @@ body.intro-lock { overflow: hidden; }
   outline: 3px solid transparent; background: linear-gradient(150deg, var(--sage), var(--terracotta)); padding: 5px;
 }
 .about-copy p { color: var(--ink-soft); margin: 1rem 0; }
+.credentials {
+  display: inline-flex; align-items: center; gap: .6rem; font-size: .92rem;
+  color: var(--sage-deep); background: rgba(138,154,134,.12);
+  padding: .7rem 1.1rem; border-radius: 12px; margin: 1.3rem 0 0; line-height: 1.4;
+}
+.credentials .ic { width: 20px; height: 20px; stroke: var(--sage-deep); flex: none; }
+.credentials strong { color: var(--ink); font-weight: 700; }
 .about-copy h2 { margin-top: .3rem; }
 blockquote {
   font-family: var(--ff-script); font-size: 2rem; color: var(--terracotta-deep);
@@ -348,7 +361,8 @@ blockquote {
 .reserve-note strong { color: #fff; font-weight: 700; }
 
 /* ---- Contact ---- */
-.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 860px; margin-inline: auto; }
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; max-width: 1000px; margin-inline: auto; }
+.contact-email { font-size: .82rem; word-break: break-word; }
 .contact-item {
   background: var(--surface); border-radius: var(--radius); padding: 1.8rem 1.4rem; text-align: center;
   text-decoration: none; box-shadow: var(--shadow-sm); border: 1px solid var(--line);
@@ -363,6 +377,7 @@ a.contact-item:hover { transform: translateY(-4px); }
 /* ============ FOOTER ============ */
 .site-footer { background: #2a2620; color: #cdc4b6; padding: 2.5rem 0; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.2rem; }
+.footer-logo { height: 58px; width: auto; display: block; margin-bottom: .6rem; }
 .footer-brand .brand-name { color: #fbf8f4; font-size: 1.5rem; }
 .footer-brand .brand-name em { font-family: var(--ff-script); color: #d59a7c; }
 .footer-brand p { margin: .3rem 0 0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: #9a9081; }
@@ -400,7 +415,7 @@ a.contact-item:hover { transform: translateY(-4px); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .reserve-inner { grid-template-columns: 1fr; text-align: center; }
   .reserve-points { justify-items: center; }
-  .contact-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .contact-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
 
   .nav-toggle { display: flex; }
   .nav-menu {
@@ -429,6 +444,7 @@ a.contact-item:hover { transform: translateY(-4px); }
   .cards { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .gallery img { height: 200px; }
+  .contact-grid { grid-template-columns: 1fr; max-width: 340px; }
   .brand-tagline { display: none; }
   .container { width: min(100% - 2rem, var(--wrap)); }
   h1 { font-size: clamp(2.1rem, 8.5vw, 2.8rem); }
