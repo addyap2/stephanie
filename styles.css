@@ -361,7 +361,8 @@ blockquote {
 .reserve-note strong { color: #fff; font-weight: 700; }
 
 /* ---- Contact ---- */
-.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; max-width: 1000px; margin-inline: auto; }
+.contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.1rem; max-width: 1060px; margin-inline: auto; }
+.contact-item { flex: 1 1 150px; max-width: 210px; }
 .contact-email { font-size: .82rem; word-break: break-word; }
 .contact-item {
   background: var(--surface); border-radius: var(--radius); padding: 1.8rem 1.4rem; text-align: center;
