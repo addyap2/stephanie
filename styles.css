@@ -180,6 +180,17 @@ h3 { font-size: 1.45rem; font-weight: 500; }
   will-change: transform, opacity;
 }
 .membrane-svg { width: 100%; height: 100%; }
+
+/* La Source — WebGL hero (progressive enhancement, desktop/tablet) */
+.source-canvas {
+  position: absolute; z-index: 1; top: 0; right: 0;
+  width: min(66vw, 820px); height: 100%;
+  opacity: 0; transition: opacity 1.3s ease; pointer-events: none;
+  -webkit-mask-image: radial-gradient(105% 92% at 72% 44%, #000 46%, transparent 76%);
+          mask-image: radial-gradient(105% 92% at 72% 44%, #000 46%, transparent 76%);
+}
+.source-canvas.is-ready { opacity: 1; }
+.hero.source-on .membrane { opacity: 0; transition: opacity 1s ease; }
 @keyframes breathe {
   0%, 100% { transform: translateY(-50%) scale(1); opacity: .92; }
   50%      { transform: translateY(-50%) scale(1.055); opacity: 1; }
