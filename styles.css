@@ -334,7 +334,8 @@ blockquote {
 .reserve-actions .btn { width: 100%; }
 .reserve-actions .btn-primary { background: var(--terracotta); color: #fff; box-shadow: 0 12px 26px rgba(0,0,0,.22); }
 .reserve-actions .btn-primary:hover { background: var(--terracotta-deep); }
-.reserve-note { font-size: .85rem; color: rgba(255,255,255,.8); margin: .2rem 0 0; }
+.reserve-note { font-size: .85rem; color: rgba(255,255,255,.82); margin: .2rem 0 0; line-height: 1.5; }
+.reserve-note strong { color: #fff; font-weight: 700; }
 
 /* ---- Contact ---- */
 .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 860px; margin-inline: auto; }
