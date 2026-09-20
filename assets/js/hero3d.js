@@ -1,7 +1,7 @@
 // La Source — hero scene (calm-cinematic). Core three.js only, no addons.
 import * as THREE from "../vendor/three.module.min.js";
 
-const PLASTER = 0xf4efe9;
+const PLASTER = 0xedf1e8;
 
 // ---- tiny value noise for the pebble silhouette ----
 function hash(x, y, z) {
@@ -145,7 +145,7 @@ export function createSource({ canvas, tier = "A", reducedMotion = false }) {
 
   // ---- glow behind the stone (fakes bloom) ----
   const glow = new THREE.Sprite(new THREE.SpriteMaterial({
-    map: radialTexture("rgba(255,226,190,0.85)", "rgba(255,226,190,0)"),
+    map: radialTexture("rgba(224,240,206,0.85)", "rgba(224,240,206,0)"),
     transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
   }));
   glow.scale.set(2.6, 2.6, 1); glow.position.set(0.05, restY + 0.05, -0.3);

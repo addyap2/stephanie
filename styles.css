@@ -1,18 +1,18 @@
 /* ============ SR Bien-être — « Le Souffle » ============ */
 :root {
-  /* Ground & ink — warm limestone plaster, warm near-black */
-  --plaster: #f4efe9;
-  --plaster-deep: #ece3d8;
-  --surface: #fbf8f4;
-  --ink: #2b2620;
-  --ink-soft: #6f665c;
-  --line: #e7dccd;
+  /* Ground & ink — soft, calming sage-green ("un vert apaisant") */
+  --plaster: #edf1e8;
+  --plaster-deep: #e2e9db;
+  --surface: #f7faf3;
+  --ink: #2a3128;
+  --ink-soft: #626d5b;
+  --line: #dae2d2;
 
-  /* Botanical calm + one warm point of action */
-  --sage: #8a9a86;
-  --sage-deep: #566b57;
-  --terracotta: #c67b5c;
-  --terracotta-deep: #b3684a;
+  /* Calming green palette — the action colour is a fresh, soothing green */
+  --sage: #8a9a83;
+  --sage-deep: #4d6a4c;
+  --terracotta: #4e8760;      /* CTA / accent green (token name kept) */
+  --terracotta-deep: #3f7150;
 
   /* The spectrum — used ONLY as refracted light (membrane, logo mark) */
   --brand-grad: linear-gradient(120deg, #e78ab0 0%, #9a7cc4 34%, #4aa9d8 68%, #7fc48a 100%);
@@ -25,8 +25,8 @@
   --pink: var(--terracotta);
   --teal: var(--sage-deep);
 
-  --shadow-sm: 0 6px 20px rgba(70, 58, 40, .07);
-  --shadow: 0 26px 60px rgba(70, 58, 40, .14);
+  --shadow-sm: 0 6px 20px rgba(48, 60, 42, .08);
+  --shadow: 0 26px 60px rgba(48, 60, 42, .15);
   --radius: 20px;
   --radius-sm: 12px;
   --wrap: 1140px;
@@ -82,8 +82,8 @@ a { color: inherit; }
 }
 .btn { font-family: var(--ff-body); font-weight: 600; letter-spacing: .01em; }
 .btn:hover { transform: translateY(-2px); }
-.btn-primary { background: var(--terracotta); color: #fff; box-shadow: 0 12px 26px rgba(198, 123, 92, .32); }
-.btn-primary:hover { background: var(--terracotta-deep); box-shadow: 0 16px 32px rgba(198, 123, 92, .42); }
+.btn-primary { background: var(--terracotta); color: #fff; box-shadow: 0 12px 26px rgba(78, 135, 96, .30); }
+.btn-primary:hover { background: var(--terracotta-deep); box-shadow: 0 16px 32px rgba(78, 135, 96, .40); }
 .btn-ghost { background: transparent; border-color: var(--sage); color: var(--sage-deep); }
 .btn-ghost:hover { background: rgba(138, 154, 134, .12); }
 .btn-ghost-light { border-color: rgba(255,255,255,.7); color: #fff; }
@@ -144,7 +144,7 @@ h3 { font-size: 1.45rem; font-weight: 500; }
   min-height: min(92vh, 860px);
   display: flex; align-items: center;
   background:
-    radial-gradient(120% 90% at 100% 0%, #efe7db 0%, transparent 55%),
+    radial-gradient(120% 90% at 100% 0%, #e4ecdd 0%, transparent 55%),
     var(--plaster);
 }
 .hero-inner {
@@ -355,7 +355,7 @@ blockquote {
 .reserve::after {
   content: ""; position: absolute; z-index: 0; top: 50%; right: -8%; transform: translateY(-50%);
   width: 46vw; max-width: 520px; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 45% 45%, rgba(253,246,236,.5), rgba(214,159,125,.25) 45%, transparent 70%);
+  background: radial-gradient(circle at 45% 45%, rgba(244,250,236,.55), rgba(160,196,150,.28) 45%, transparent 70%);
   filter: blur(20px); animation: breathe var(--breath) ease-in-out infinite; pointer-events: none;
 }
 .reserve-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2.5rem; align-items: center; }
@@ -365,8 +365,8 @@ blockquote {
 .reserve-points li { font-weight: 500; display: flex; align-items: center; gap: .6rem; }
 .reserve-actions { display: flex; flex-direction: column; gap: .9rem; align-items: stretch; text-align: center; }
 .reserve-actions .btn { width: 100%; }
-.reserve-actions .btn-primary { background: var(--terracotta); color: #fff; box-shadow: 0 12px 26px rgba(0,0,0,.22); }
-.reserve-actions .btn-primary:hover { background: var(--terracotta-deep); }
+.reserve-actions .btn-primary { background: #eef3e6; color: var(--terracotta-deep); box-shadow: 0 12px 26px rgba(0,0,0,.22); }
+.reserve-actions .btn-primary:hover { background: #fff; }
 .reserve-note { font-size: .85rem; color: rgba(255,255,255,.82); margin: .2rem 0 0; line-height: 1.5; }
 .reserve-note strong { color: #fff; font-weight: 700; }
 
@@ -386,16 +386,16 @@ a.contact-item:hover { transform: translateY(-4px); }
 .contact-val small { font-family: var(--ff-body); font-size: .8rem; color: var(--ink-soft); }
 
 /* ============ FOOTER ============ */
-.site-footer { background: #2a2620; color: #cdc4b6; padding: 2.5rem 0; }
+.site-footer { background: #28322a; color: #c4ccbe; padding: 2.5rem 0; }
 .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.2rem; }
 .footer-logo { height: 58px; width: auto; display: block; margin-bottom: .6rem; }
 .footer-brand .brand-name { color: #fbf8f4; font-size: 1.5rem; }
-.footer-brand .brand-name em { font-family: var(--ff-script); color: #d59a7c; }
-.footer-brand p { margin: .3rem 0 0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: #9a9081; }
+.footer-brand .brand-name em { font-family: var(--ff-script); color: #9ec089; }
+.footer-brand p { margin: .3rem 0 0; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: #8c9384; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
-.site-footer nav a { text-decoration: none; color: #cdc4b6; font-size: .95rem; }
+.site-footer nav a { text-decoration: none; color: #c4ccbe; font-size: .95rem; }
 .site-footer nav a:hover { color: #fbf8f4; }
-.footer-legal { width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,.09); padding-top: 1.2rem; margin: .5rem 0 0; font-size: .82rem; color: #8a8173; }
+.footer-legal { width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,.09); padding-top: 1.2rem; margin: .5rem 0 0; font-size: .82rem; color: #808a78; }
 
 /* ---- Floating action button (mobile) ---- */
 .fab {
