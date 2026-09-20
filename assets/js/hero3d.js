@@ -82,7 +82,7 @@ export function createSource({ canvas, tier = "A", reducedMotion = false }) {
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(PLASTER, 0.19);
+  scene.fog = new THREE.FogExp2(PLASTER, 0.24);
   scene.environment = warmEnvironment(renderer);
 
   const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
@@ -135,7 +135,7 @@ export function createSource({ canvas, tier = "A", reducedMotion = false }) {
 
   // ---- water ----
   const waterMat = new THREE.MeshPhysicalMaterial({
-    color: 0x36302a, roughness: 0.12, metalness: 0.0, transparent: true, opacity: 0.9,
+    color: 0x49543f, roughness: 0.13, metalness: 0.0, transparent: true, opacity: 0.86,
     clearcoat: 1.0, clearcoatRoughness: 0.06, envMapIntensity: 1.25,
   });
   const rn = rippleNormal(); waterMat.normalMap = rn; waterMat.normalScale = new THREE.Vector2(0.1, 0.1);

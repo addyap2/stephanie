@@ -98,18 +98,20 @@
     } catch (e) { return false; }
   }
 
-  // Decide the fidelity tier. Mobile / low-power / save-data keep the SVG fallback.
+  // Decide the fidelity tier. Phones / low-power / save-data keep the SVG fallback.
+  // NB: hardwareConcurrency & deviceMemory are unreliable — privacy browsers
+  // (e.g. Brave) spoof them low — so we gate on pointer type + width, not cores.
   function pickTier() {
     var w = window.innerWidth;
     var mem = navigator.deviceMemory;                // undefined on many browsers
-    var cores = navigator.hardwareConcurrency || 0;
     var save = navigator.connection && navigator.connection.saveData;
     var coarse = window.matchMedia("(pointer: coarse)").matches;
     if (!hasWebGL() || save) return null;
-    if (w < 760 || (coarse && w < 1024)) return null;     // phones -> « Le Souffle » fallback
-    if ((mem && mem < 4) || (cores && cores <= 4)) return null;
-    if (w < 1100 || (mem && mem < 8) || (cores && cores <= 6)) return "B"; // tablets / mid
-    return "A";
+    if (mem && mem <= 2) return null;                    // genuinely low RAM
+    if (coarse) return w >= 1024 ? "B" : null;           // phones -> fallback; big tablets -> B
+    if (w < 900) return null;                            // tiny desktop window -> fallback
+    if (w < 1280 || (mem && mem <= 4)) return "B";       // mid desktop / laptop
+    return "A";                                          // roomy desktop -> full scene
   }
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -125,14 +127,15 @@
     canvas.setAttribute("aria-hidden", "true");
     hero.insertBefore(canvas, hero.firstChild);
 
-    import("./assets/js/hero3d.js").then(function (mod) {
+    import("./assets/js/hero3d.js?v=2").then(function (mod) {
       var app;
       try {
         app = mod.createSource({ canvas: canvas, tier: tier, reducedMotion: reduce });
       } catch (e) { canvas.remove(); return; }
 
       hero.classList.add("source-on");
-      requestAnimationFrame(function () { canvas.classList.add("is-ready"); });
+      // setTimeout (not rAF) so the fade-in still fires if the tab is hidden
+      setTimeout(function () { canvas.classList.add("is-ready"); }, 60);
 
       // scroll -> gentle lift; pause when the hero leaves the viewport
       var ticking = false;
