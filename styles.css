@@ -502,7 +502,10 @@ a.contact-item:hover { transform: translateY(-4px); }
   .reserve-points { justify-items: center; }
   .contact-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
 
-  .nav-toggle { display: flex; }
+  /* comfortable touch targets on mobile (>=44px) */
+  .nav-toggle { display: flex; width: 44px; height: 44px; padding: 0; align-items: center; justify-content: center; }
+  .btn { min-height: 44px; }
+  .btn-sm { min-height: 44px; }
   .nav-menu {
     position: absolute; top: 100%; right: 0; left: 0;
     flex-direction: column; align-items: stretch; gap: 0;
