@@ -53,6 +53,7 @@ body {
    the fixed background canvas shows, and content keeps its own legible grounds. */
 html.source-on body { background: transparent; }
 img { max-width: 100%; display: block; }
+picture { display: contents; } /* let the inner <img> lay out as if direct child */
 a { color: inherit; }
 
 /* ---- Thin line icons ---- */

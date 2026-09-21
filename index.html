@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@300;400;500;600;700&family=Petit+Formal+Script&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=16" />
+  <link rel="stylesheet" href="styles.css?v=17" />
 
   <script type="application/ld+json">
   {
@@ -42,6 +42,7 @@
     "image": "https://stephanie-site-gamma.vercel.app/assets/img/hero-poster.jpg",
     "telephone": "+33669962376",
     "email": "stephaniesophro34@gmail.com",
+    "knowsLanguage": "fr-FR",
     "founder": { "@type": "Person", "name": "Stéphanie Rouchy" },
     "areaServed": "Saint-Raphaël et alentours",
     "address": {
@@ -51,8 +52,27 @@
       "postalCode": "83700",
       "addressCountry": "FR"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.43208,
+      "longitude": 6.77301
+    },
     "slogan": "Prenez soin de vous, naturellement.",
     "priceRange": "€€",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Prestations",
+      "itemListElement": [
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "40", "itemOffered": { "@type": "Service", "name": "Sophrologie (adulte)" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "30", "itemOffered": { "@type": "Service", "name": "Sophrologie (enfant)" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "40", "itemOffered": { "@type": "Service", "name": "Soin énergétique (Reiki)" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "60", "itemOffered": { "@type": "Service", "name": "Drainage lymphatique — membres inférieurs (1 h)" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "70", "itemOffered": { "@type": "Service", "name": "Drainage lymphatique — membres supérieurs & cou (1 h à 1 h 15)" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "50", "itemOffered": { "@type": "Service", "name": "Massage modelant minceur" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "30", "itemOffered": { "@type": "Service", "name": "Yoga enfants (individuel)" } },
+        { "@type": "Offer", "priceCurrency": "EUR", "price": "15", "itemOffered": { "@type": "Service", "name": "Yoga enfants (groupe, dès 3 enfants)" } }
+      ]
+    },
     "potentialAction": {
       "@type": "ReserveAction",
       "name": "Réserver une séance de sophrologie avec Stéphanie",
@@ -373,7 +393,10 @@
     <section class="section section-alt" id="apropos">
       <div class="container about">
         <div class="about-media">
-          <img src="assets/img/stephanie.jpg?v=2" alt="Stéphanie Rouchy, sophrologue et énergéticienne" width="600" height="600" loading="lazy" decoding="async" />
+          <picture>
+            <source srcset="assets/img/stephanie.webp" type="image/webp" />
+            <img src="assets/img/stephanie.jpg?v=2" alt="Stéphanie Rouchy, sophrologue et énergéticienne" width="600" height="600" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <div class="about-copy">
           <p class="eyebrow">À propos</p>
@@ -413,12 +436,12 @@
           </p>
         </div>
         <div class="gallery">
-          <figure><img src="assets/img/cabinet-2.jpg" alt="Table de soin du cabinet" loading="lazy" width="1400" height="1892" /></figure>
-          <figure><img src="assets/img/massage-1.jpg" alt="Massage modelant du dos" loading="lazy" width="554" height="579" /></figure>
-          <figure><img src="assets/img/cabinet-3.jpg" alt="Espace de soin lumineux" loading="lazy" width="1400" height="1892" /></figure>
-          <figure><img src="assets/img/massage-2.jpg" alt="Massage relaxant des jambes" loading="lazy" width="468" height="472" /></figure>
-          <figure><img src="assets/img/cabinet-5.jpg" alt="Vue d'ensemble du cabinet de bien-être" loading="lazy" width="1400" height="1745" /></figure>
-          <figure><img src="assets/img/massage-3.jpg?v=2" alt="Drainage lymphatique du ventre" loading="lazy" width="574" height="372" /></figure>
+          <figure><picture><source srcset="assets/img/cabinet-2.webp" type="image/webp" /><img src="assets/img/cabinet-2.jpg" alt="Table de soin du cabinet" loading="lazy" decoding="async" width="1400" height="1892" /></picture></figure>
+          <figure><picture><source srcset="assets/img/massage-1.webp" type="image/webp" /><img src="assets/img/massage-1.jpg" alt="Massage modelant du dos" loading="lazy" decoding="async" width="554" height="579" /></picture></figure>
+          <figure><picture><source srcset="assets/img/cabinet-3.webp" type="image/webp" /><img src="assets/img/cabinet-3.jpg" alt="Espace de soin lumineux" loading="lazy" decoding="async" width="1400" height="1892" /></picture></figure>
+          <figure><picture><source srcset="assets/img/massage-2.webp" type="image/webp" /><img src="assets/img/massage-2.jpg" alt="Massage relaxant des jambes" loading="lazy" decoding="async" width="468" height="472" /></picture></figure>
+          <figure><picture><source srcset="assets/img/cabinet-5.webp" type="image/webp" /><img src="assets/img/cabinet-5.jpg" alt="Vue d'ensemble du cabinet de bien-être" loading="lazy" decoding="async" width="1400" height="1745" /></picture></figure>
+          <figure><picture><source srcset="assets/img/massage-3.webp" type="image/webp" /><img src="assets/img/massage-3.jpg?v=2" alt="Drainage lymphatique du ventre" loading="lazy" decoding="async" width="574" height="372" /></picture></figure>
         </div>
       </div>
     </section>
