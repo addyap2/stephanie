@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stephanie-site-gamma.vercel.app/sitemap.xml
