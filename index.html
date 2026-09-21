@@ -6,20 +6,31 @@
   <title>SR Bien-être — Sophrologie, Énergétique & Massage à Saint-Raphaël</title>
   <meta name="description" content="SR Bien-être à Saint-Raphaël (83700) : sophrologie, soins énergétiques (Reiki), drainage lymphatique, massage modelant minceur et yoga enfants. Prenez soin de vous, naturellement. Réservation en ligne." />
   <meta name="theme-color" content="#edf1e8" />
-  <link rel="canonical" href="https://sr-bien-etre.fr/" />
+  <!-- Canonical: currently the Vercel URL. Switch to https://sr-bien-etre.fr/ once that domain is registered and pointed at Vercel. -->
+  <link rel="canonical" href="https://stephanie-site-gamma.vercel.app/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="SR Bien-être" />
+  <meta property="og:url" content="https://stephanie-site-gamma.vercel.app/" />
   <meta property="og:title" content="SR Bien-être — Sophrologie, Énergétique & Massage à Saint-Raphaël" />
   <meta property="og:description" content="Sophrologie, soins énergétiques, drainage lymphatique, massage minceur et yoga enfants. Prenez soin de vous, naturellement." />
-  <meta property="og:image" content="assets/img/cabinet-1.jpg" />
+  <meta property="og:image" content="https://stephanie-site-gamma.vercel.app/assets/img/hero-poster.jpg" />
+  <meta property="og:image:alt" content="SR Bien-être — Sophrologie & énergétique à Saint-Raphaël" />
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SR Bien-être — Sophrologie, Énergétique & Massage à Saint-Raphaël" />
+  <meta name="twitter:description" content="Sophrologie, soins énergétiques, drainage lymphatique, massage minceur et yoga enfants. Prenez soin de vous, naturellement." />
+  <meta name="twitter:image" content="https://stephanie-site-gamma.vercel.app/assets/img/hero-poster.jpg" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter+Tight:wght@300;400;500;600;700&family=Petit+Formal+Script&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=15" />
+  <link rel="stylesheet" href="styles.css?v=16" />
 
   <script type="application/ld+json">
   {
@@ -27,13 +38,15 @@
     "@type": "HealthAndBeautyBusiness",
     "name": "SR Bien-être",
     "description": "Sophrologie, soins énergétiques (Reiki), drainage lymphatique, massage modelant minceur et yoga enfants à Saint-Raphaël.",
-    "image": "https://sr-bien-etre.fr/assets/img/cabinet-1.jpg",
+    "url": "https://stephanie-site-gamma.vercel.app/",
+    "image": "https://stephanie-site-gamma.vercel.app/assets/img/hero-poster.jpg",
     "telephone": "+33669962376",
     "email": "stephaniesophro34@gmail.com",
     "founder": { "@type": "Person", "name": "Stéphanie Rouchy" },
     "areaServed": "Saint-Raphaël et alentours",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "643 avenue de Valescure, Bâtiment A, Escalier A",
       "addressLocality": "Saint-Raphaël",
       "postalCode": "83700",
       "addressCountry": "FR"
@@ -360,7 +373,7 @@
     <section class="section section-alt" id="apropos">
       <div class="container about">
         <div class="about-media">
-          <img src="assets/img/stephanie.jpg?v=2" alt="Stéphanie Rouchy, sophrologue et énergéticienne" width="600" height="600" />
+          <img src="assets/img/stephanie.jpg?v=2" alt="Stéphanie Rouchy, sophrologue et énergéticienne" width="600" height="600" loading="lazy" decoding="async" />
         </div>
         <div class="about-copy">
           <p class="eyebrow">À propos</p>
@@ -498,6 +511,10 @@
       <p class="footer-legal">
         © <span id="year"></span> SR Bien-être — Rouchy Stéphanie · Saint-Raphaël 83700 · 06 69 96 23 76<br />
         SIRET 509 418 265 00021
+      </p>
+      <p class="footer-legal-links">
+        <a href="mentions-legales">Mentions légales</a>
+        <a href="confidentialite">Politique de confidentialité</a>
       </p>
     </div>
   </footer>
