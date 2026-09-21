@@ -141,7 +141,7 @@ h3 { font-size: 1.45rem; font-weight: 500; }
 /* ============ HERO — « Le Souffle » ============ */
 .hero {
   position: relative; overflow: hidden;
-  min-height: min(92vh, 860px);
+  min-height: min(78vh, 660px);
   display: flex; align-items: center;
   background:
     radial-gradient(120% 90% at 100% 0%, #e4ecdd 0%, transparent 55%),
@@ -150,7 +150,7 @@ h3 { font-size: 1.45rem; font-weight: 500; }
 .hero-inner {
   position: relative; z-index: 2;
   display: grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items: center;
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  padding: clamp(2rem, 3.5vw, 3rem) 0;
 }
 .hero-copy { max-width: 27rem; }
 .hero-title { margin: 0 0 1.4rem; }
@@ -277,9 +277,9 @@ body.intro-lock { overflow: hidden; }
 .trust-item strong { color: var(--ink); font-weight: 700; }
 
 /* ============ SECTIONS ============ */
-.section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.section { padding: clamp(2.25rem, 4.5vw, 3.75rem) 0; }
 .section-alt { background: var(--bg-alt); }
-.section-head { text-align: center; max-width: 640px; margin: 0 auto 2.8rem; }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 2.25rem; }
 .section-intro { color: var(--ink-soft); font-size: 1.08rem; margin: .8rem 0 0; }
 
 /* ---- Cards ---- */
