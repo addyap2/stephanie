@@ -363,6 +363,9 @@ body.intro-lock { overflow: hidden; }
 
 /* ---- À propos ---- */
 .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
+/* grid items default to min-width:auto (min-content) which can force a track wider than
+   the viewport on mobile — pin to 0 so content wraps instead of causing h-scroll */
+.about-media, .about-copy { min-width: 0; }
 .about-media img {
   border-radius: 50%; width: 320px; height: 320px; object-fit: cover; margin-inline: auto;
   box-shadow: var(--shadow); border: 6px solid #fff;
@@ -371,6 +374,7 @@ body.intro-lock { overflow: hidden; }
 .about-copy p { color: var(--ink-soft); margin: 1rem 0; }
 .credentials {
   display: inline-flex; align-items: center; gap: .6rem; font-size: .92rem;
+  flex-wrap: wrap; max-width: 100%;
   color: var(--sage-deep); background: rgba(138,154,134,.12);
   padding: .7rem 1.1rem; border-radius: 12px; margin: 1.3rem 0 0; line-height: 1.4;
 }
@@ -498,7 +502,10 @@ a.contact-item:hover { transform: translateY(-4px); }
   .reserve-points { justify-items: center; }
   .contact-grid { grid-template-columns: 1fr 1fr; max-width: 520px; }
 
-  .nav-toggle { display: flex; }
+  /* comfortable touch targets on mobile (>=44px) */
+  .nav-toggle { display: flex; width: 44px; height: 44px; padding: 0; align-items: center; justify-content: center; }
+  .btn { min-height: 44px; }
+  .btn-sm { min-height: 44px; }
   .nav-menu {
     position: absolute; top: 100%; right: 0; left: 0;
     flex-direction: column; align-items: stretch; gap: 0;
