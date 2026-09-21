@@ -39,6 +39,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { background: var(--bg); }
 body {
   margin: 0;
   font-family: var(--ff-body);
@@ -48,6 +49,9 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
+/* When the WebGL world is live, the page floats over it: body goes transparent so
+   the fixed background canvas shows, and content keeps its own legible grounds. */
+html.source-on body { background: transparent; }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
@@ -203,16 +207,32 @@ h3 { font-size: 1.45rem; font-weight: 500; }
 }
 @keyframes breathe-poster { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
 
-/* La Source — WebGL hero (progressive enhancement, desktop/tablet) */
-.source-canvas {
-  position: absolute; z-index: 1; top: 0; right: 0;
-  width: min(66vw, 820px); height: 100%;
-  opacity: 0; transition: opacity 1.3s ease; pointer-events: none;
-  -webkit-mask-image: radial-gradient(115% 78% at 70% 52%, #000 50%, transparent 84%);
-          mask-image: radial-gradient(115% 78% at 70% 52%, #000 50%, transparent 84%);
+/* La Source — WebGL scroll world (progressive enhancement, desktop/tablet).
+   A single fixed background canvas the whole page scrolls over. */
+.source-world {
+  position: fixed; inset: 0; z-index: -1;
+  width: 100vw; height: 100vh; height: 100dvh;
+  opacity: 0; transition: opacity 1.4s ease; pointer-events: none;
 }
-.source-canvas.is-ready { opacity: 1; }
-.hero.source-on .membrane, .hero.source-on .hero-poster { opacity: 0; transition: opacity 1s ease; }
+.source-world.is-ready { opacity: 1; }
+
+/* Hero opens straight onto the world; the flat fallbacks step aside. */
+html.source-on .hero { background: transparent; }
+html.source-on .membrane, html.source-on .hero-poster { opacity: 0; transition: opacity 1s ease; }
+/* a soft plaster wash under the hero copy so the headline never fights the scene */
+html.source-on .hero::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(100deg, rgba(237,241,232,.92) 0%, rgba(237,241,232,.62) 34%, rgba(237,241,232,0) 60%);
+}
+
+/* Mid-page sections keep a translucent plaster ground: text stays crisp while the
+   rising cairn only whispers through behind the content. */
+html.source-on #services,
+html.source-on #cabinet { background: rgba(237, 241, 232, .72); }
+
+/* The finale : let the risen dawn horizon read behind the closing content. */
+html.source-on #contact { background: rgba(233, 238, 220, .80); }
+html.source-on .site-footer { background: rgba(29, 38, 31, .74); }
 @keyframes breathe {
   0%, 100% { transform: translateY(-50%) scale(1); opacity: .92; }
   50%      { transform: translateY(-50%) scale(1.055); opacity: 1; }

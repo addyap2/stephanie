@@ -85,7 +85,7 @@
   window.addEventListener("keydown", onKey);
 })();
 
-/* ---------- La Source : capability-gated WebGL hero ---------- */
+/* ---------- La Source : capability-gated WebGL scroll world ---------- */
 (function () {
   "use strict";
   var hero = document.querySelector(".hero");
@@ -123,45 +123,41 @@
   function boot() {
     if (started) return; started = true;
     var canvas = document.createElement("canvas");
-    canvas.className = "source-canvas";
+    canvas.className = "source-world";
     canvas.setAttribute("aria-hidden", "true");
-    hero.insertBefore(canvas, hero.firstChild);
+    // A page-wide background world: mount behind everything, not inside the hero.
+    document.body.insertBefore(canvas, document.body.firstChild);
 
-    import("./assets/js/hero3d.js?v=3").then(function (mod) {
+    import("./assets/js/hero3d.js?v=7").then(function (mod) {
       var app;
       try {
         app = mod.createSource({ canvas: canvas, tier: tier, reducedMotion: reduce });
       } catch (e) { canvas.remove(); return; }
 
-      hero.classList.add("source-on");
+      // reveal the world; sections keep their own grounds so text stays legible
+      document.documentElement.classList.add("source-on");
       // setTimeout (not rAF) so the fade-in still fires if the tab is hidden
       setTimeout(function () { canvas.classList.add("is-ready"); }, 60);
 
-      // scroll -> gentle lift; pause when the hero leaves the viewport
+      // whole-page scroll drives the journey (hero -> cairn -> horizon lift)
       var ticking = false;
+      function progress() {
+        var el = document.documentElement;
+        var max = (el.scrollHeight - el.clientHeight) || 1;
+        return Math.min(1, Math.max(0, (window.scrollY || el.scrollTop || 0) / max));
+      }
       function onScroll() {
         if (ticking) return; ticking = true;
-        requestAnimationFrame(function () {
-          var r = hero.getBoundingClientRect();
-          var p = Math.min(1, Math.max(0, -r.top / (r.height || 1)));
-          app.setScroll(p);
-          ticking = false;
-        });
+        requestAnimationFrame(function () { app.setScroll(progress()); ticking = false; });
       }
       window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+      app.setScroll(progress());
 
-      if ("IntersectionObserver" in window) {
-        new IntersectionObserver(function (ents) {
-          ents.forEach(function (en) {
-            if (reduce) return;
-            if (en.isIntersecting && !document.hidden) app.start(); else app.stop();
-          });
-        }, { threshold: 0.02 }).observe(hero);
-      }
+      // run while the tab is visible; the world spans the page, so no viewport gating
       document.addEventListener("visibilitychange", function () {
         if (reduce) return;
-        if (document.hidden) app.stop();
-        else if (hero.getBoundingClientRect().bottom > 0) app.start();
+        if (document.hidden) app.stop(); else app.start();
       });
     }).catch(function () { canvas.remove(); });
   }
