@@ -127,7 +127,7 @@
     canvas.setAttribute("aria-hidden", "true");
     hero.insertBefore(canvas, hero.firstChild);
 
-    import("./assets/js/hero3d.js?v=2").then(function (mod) {
+    import("./assets/js/hero3d.js?v=3").then(function (mod) {
       var app;
       try {
         app = mod.createSource({ canvas: canvas, tier: tier, reducedMotion: reduce });

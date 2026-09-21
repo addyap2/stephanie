@@ -182,14 +182,26 @@ h3 { font-size: 1.45rem; font-weight: 500; }
   text-transform: uppercase; color: var(--sage-deep); margin-bottom: .8rem;
 }
 
-/* La Membrane */
+/* La Membrane — glow used as the MOBILE fallback (hidden on desktop; poster used there) */
 .membrane {
+  display: none;
   position: absolute; z-index: 1; top: 50%; right: 4%; transform: translateY(-50%);
   width: min(46vw, 540px); aspect-ratio: 1; pointer-events: none;
   animation: breathe var(--breath) ease-in-out infinite;
   will-change: transform, opacity;
 }
 .membrane-svg { width: 100%; height: 100%; }
+
+/* Desktop fallback poster — a still of the 3D scene, styled/masked like the live canvas */
+.hero-poster {
+  position: absolute; z-index: 1; top: 0; right: 0;
+  width: min(66vw, 820px); height: 100%; object-fit: cover; object-position: 60% 50%;
+  pointer-events: none; transition: opacity 1s ease;
+  animation: breathe-poster var(--breath) ease-in-out infinite; will-change: transform;
+  -webkit-mask-image: radial-gradient(115% 78% at 70% 52%, #000 50%, transparent 84%);
+          mask-image: radial-gradient(115% 78% at 70% 52%, #000 50%, transparent 84%);
+}
+@keyframes breathe-poster { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }
 
 /* La Source — WebGL hero (progressive enhancement, desktop/tablet) */
 .source-canvas {
@@ -200,7 +212,7 @@ h3 { font-size: 1.45rem; font-weight: 500; }
           mask-image: radial-gradient(115% 78% at 70% 52%, #000 50%, transparent 84%);
 }
 .source-canvas.is-ready { opacity: 1; }
-.hero.source-on .membrane { opacity: 0; transition: opacity 1s ease; }
+.hero.source-on .membrane, .hero.source-on .hero-poster { opacity: 0; transition: opacity 1s ease; }
 @keyframes breathe {
   0%, 100% { transform: translateY(-50%) scale(1); opacity: .92; }
   50%      { transform: translateY(-50%) scale(1.055); opacity: 1; }
@@ -429,9 +441,11 @@ a.contact-item:hover { transform: translateY(-4px); }
   .lead { max-width: 46ch; margin-inline: auto; }
   .hero-place { display: none; }
   .membrane {
+    display: block;
     top: 8%; right: 50%; transform: translateX(50%); width: min(88vw, 460px);
     opacity: .8; animation: breathe-m var(--breath) ease-in-out infinite;
   }
+  .hero-poster { display: none; }
   .breath-line { display: none; }
   .hero-scroll { display: none; }
   .cards { grid-template-columns: repeat(2, 1fr); }
