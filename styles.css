@@ -313,6 +313,14 @@ body.intro-lock { overflow: hidden; }
   font-size: .86rem; color: var(--ink-soft); line-height: 1.7;
 }
 .card-price strong { color: var(--accent); font-family: var(--ff-head); font-size: 1.05rem; font-weight: 600; }
+.booking-hint {
+  display: flex; align-items: center; gap: .6rem; justify-content: center; flex-wrap: wrap;
+  max-width: 680px; margin: 2rem auto 0; padding: .85rem 1.3rem;
+  font-size: .9rem; color: var(--ink-soft); line-height: 1.5; text-align: center;
+  background: rgba(138, 154, 134, .14); border: 1px solid var(--line); border-radius: 14px;
+}
+.booking-hint .ic { width: 20px; height: 20px; stroke: var(--sage-deep); flex: none; }
+.booking-hint strong { color: var(--sage-deep); font-weight: 700; }
 
 /* ---- À propos ---- */
 .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
