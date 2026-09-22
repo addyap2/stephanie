@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stephanie-site-gamma.vercel.app/sitemap.xml
+Sitemap: https://www.srbienetre.fr/sitemap.xml
