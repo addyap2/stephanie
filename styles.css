@@ -650,6 +650,15 @@ a.contact-item:hover { transform: translateY(-4px); }
 .price-heading a:hover { color: var(--sage-deep); text-decoration: underline; }
 .services-tarifs-link { text-align: center; margin: 1.1rem 0 0; }
 
+/* ---- Note / caution box ---- */
+.note-box {
+  max-width: 720px; margin: 1.4rem auto 0; padding: 1.1rem 1.3rem;
+  background: rgba(138, 154, 134, .1); border: 1px solid var(--line);
+  border-left: 3px solid var(--sage-deep); border-radius: var(--radius-sm);
+}
+.note-box p { margin: 0; color: var(--ink-soft); line-height: 1.65; font-size: .98rem; }
+.note-box strong { color: var(--sage-deep); }
+
 .card-link {
   display: inline-flex; align-items: center; gap: .35rem; margin-top: 1rem;
   color: var(--sage-deep); font-weight: 600; font-size: .95rem; text-decoration: none;
