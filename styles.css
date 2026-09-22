@@ -642,6 +642,14 @@ a.contact-item:hover { transform: translateY(-4px); }
 .site-footer .footer-services { flex-direction: column; gap: .45rem; align-items: flex-start; }
 .footer-col-title { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: #8c9384; font-weight: 700; margin-bottom: .15rem; }
 
+/* ---- About page role + Tarifs headings ---- */
+.about-role { color: var(--sage-deep); font-family: var(--ff-head); font-style: italic; font-size: 1.1rem; margin: 0 0 1rem; }
+.price-heading { font-size: 1.2rem; margin: 1.7rem 0 .3rem; }
+.svc-pricing .price-heading:first-child { margin-top: 0; }
+.price-heading a { color: var(--ink); text-decoration: none; }
+.price-heading a:hover { color: var(--sage-deep); text-decoration: underline; }
+.services-tarifs-link { text-align: center; margin: 1.1rem 0 0; }
+
 .card-link {
   display: inline-flex; align-items: center; gap: .35rem; margin-top: 1rem;
   color: var(--sage-deep); font-weight: 600; font-size: .95rem; text-decoration: none;
